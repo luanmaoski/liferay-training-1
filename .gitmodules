@@ -1,0 +1,3 @@
+[submodule "modules/geolocation-bulk-import"]
+	path = modules/geolocation-bulk-import
+	url = git@github.com:arboliveira/liferay-geolocation-bulk-import.git
