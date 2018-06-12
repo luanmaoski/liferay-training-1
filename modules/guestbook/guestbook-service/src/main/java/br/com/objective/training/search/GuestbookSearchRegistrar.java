@@ -30,6 +30,7 @@ import org.osgi.service.component.annotations.Reference;
 
 /**
  * @author lucas
+ * @author luan
  */
 @Component(immediate = true)
 public class GuestbookSearchRegistrar {
@@ -57,15 +58,13 @@ public class GuestbookSearchRegistrar {
         _serviceRegistration.unregister();
     }
 
-//    @Reference(target = "(indexer.class.name=br.com.objective.training.model.Guestbook)")
-    @Reference
+    @Reference(target = "(indexer.class.name=br.com.objective.training.model.Guestbook)")
     protected ModelIndexerWriterContributor<Guestbook> modelIndexWriterContributor;
 
     @Reference
     protected ModelSearchRegistrarHelper modelSearchRegistrarHelper;
 
-//    @Reference(target = "(indexer.class.name=br.com.objective.training.model.Guestbook)")
-    @Reference
+    @Reference(target = "(indexer.class.name=br.com.objective.training.model.Guestbook)")
     protected ModelSummaryContributor modelSummaryContributor;
 
     private ServiceRegistration<?> _serviceRegistration;

@@ -31,6 +31,7 @@ import org.osgi.service.component.annotations.Reference;
 
 /**
  * @author lucas
+ * @author luan
  */
 @Component(immediate = true)
 public class EntrySearchRegistrar {
@@ -58,14 +59,15 @@ public class EntrySearchRegistrar {
         _serviceRegistration.unregister();
     }
 
-//    @Reference(target = "(indexer.class.name=br.com.objective.training.model.Entry)")
+    //    @Reference(target = "(indexer.class.name=br.com.objective.training.model.Entry)")
     @Reference
     protected ModelIndexerWriterContributor<Entry> modelIndexWriterContributor;
 
     @Reference
     protected ModelSearchRegistrarHelper modelSearchRegistrarHelper;
 
-//    @Reference(target = "(indexer.class.name=br.com.objective.training.model.Entry)")
+    @Reference(target = "(indexer.class.name=br.com.objective.training.model.Entry)")
+//    @Reference(target = "(indexer.class.name=br.com.objective.training.model.Entry, component.name=com.liferay.calendar.internal.search.EntryModelSummaryContributor, component.id=1372, service.id=763, service.bundleid=347, service.scope=bundle)")
     protected ModelSummaryContributor modelSummaryContributor;
 
     private ServiceRegistration<?> _serviceRegistration;
